@@ -1,0 +1,9 @@
+{
+  "name": "Mariano Aprea",
+  "type": "Tipo de ejecutor",
+  "url": "URL del ejecutor",
+  "buildName": "Nombre de la compilación",
+  "buildOrder": "Orden de compilación",
+  "buildUrl": "URL de la compilación",
+  "reportUrl": "URL del informe"
+}
