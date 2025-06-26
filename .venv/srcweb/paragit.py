@@ -1,1 +1,1 @@
-print("edicion de archivo ultimo PARA VER DIFERENCIAS")
+print("edicion de archiv")
