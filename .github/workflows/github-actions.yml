@@ -26,13 +26,7 @@ jobs:
         working-directory: ./.venv/srcweb
       - name: Test with pytest
         run: |
-          pytest -v
+          pytest
       - name: Generate Coverage Report
         run: |
           coverage report -m
-    
-            
-      
-            
-      
-      
