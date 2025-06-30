@@ -22,8 +22,8 @@ jobs:
           pip install pytest-cov
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
 
-      #- name: Cambiar directorio de trabajo
-        #working-directory: ./.venv/srcweb
+      - name: Cambiar directorio de trabajo
+        working-directory: ~.venv/srcweb/
       - name: Test with pytest
         run: |
            python -m pytest test_main_web.py
