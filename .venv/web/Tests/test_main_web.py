@@ -4,6 +4,10 @@ from web.Setup.main import base_url
 from selenium.webdriver.common.by import By
 import pytest
 
+options = webdriver.ChromeOptions()
+options.add_argument('--ignore-certificate-errors')
+options.add_argument('--ignore-ssl-errors')
+driver = webdriver.Chrome(options=options)
 
 @pytest.mark.parametrize("driver", [
     (webdriver.Chrome()),
