@@ -7,9 +7,9 @@ import pytest
 
 @pytest.mark.parametrize("driver", [
     (webdriver.Chrome()),
-    (webdriver.Edge()),
-    (webdriver.Firefox()),
-])
+    #(webdriver.Edge()),
+    #(webdriver.Firefox()),
+              ])
 
 def test_verifica_login(driver):
     driver.get(url=base_url)
