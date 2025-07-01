@@ -9,7 +9,7 @@ import pytest
     (webdriver.Chrome()),
     #(webdriver.Edge()),
     #(webdriver.Firefox()),
-])
+              ])
 
 def test_verifica_login(driver):
     driver.get(url=base_url)
