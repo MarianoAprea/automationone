@@ -26,5 +26,5 @@ jobs:
         continue-on-error: true
       - name: Test with pytest
         run: |
-           python  -m .venv/web/Tests/test_main_web.py
+           python .venv/web/Tests/test_main_web.py
  
