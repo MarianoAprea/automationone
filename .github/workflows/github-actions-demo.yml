@@ -27,7 +27,7 @@ jobs:
         run: |
           pip install pytest
       - name: Test with pytest
-        run: pytest
+        run: coverage run -m pytest  -v -s
 
     
 
