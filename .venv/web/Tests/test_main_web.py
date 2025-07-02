@@ -10,9 +10,7 @@ options.add_argument('--ignore-ssl-errors')
 driver = webdriver.Chrome(options=options)
 
 @pytest.mark.parametrize("driver", [
-    (webdriver.Chrome()),
-    #(webdriver.Edge()),
-    #(webdriver.Firefox()),
+    (webdriver.Chrome()),  # (webdriver.Edge()),#(webdriver.Firefox()),
 ])
 def test_loginOK(driver):
     driver.get(url=base_url)
