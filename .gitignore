@@ -1,2 +1,4 @@
 **/workspace
 /.idea/workspace.xml
+.venv/web/Setup/__pycache__/principal.cpython-313.pyc
+.venv/web/Tests/__pycache__/test_main_web.cpython-313-pytest-8.4.1.pyc
