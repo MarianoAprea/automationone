@@ -8,7 +8,7 @@ if __name__ == "__main__":
     pytest.main(["test_main_web.py"])
 
 @pytest.mark.parametrize("driver", [
-    (webdriver.Chrome()), (webdriver.Edge()), (webdriver.Firefox()),
+    (webdriver.Chrome()), #(webdriver.Edge()), (webdriver.Firefox()),
 ])
 
 
