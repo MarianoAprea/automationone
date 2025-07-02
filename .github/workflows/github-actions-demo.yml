@@ -24,7 +24,16 @@ jobs:
           pip install ruff
           ruff --format=github --target-version=py310 .
         continue-on-error: true
+
+      - name: Start Selenoid Server
+        uses: Xotabu4/selenoid-github-action@v2
+      #  with:
+          #selenoid-start-arguments: # optional, default is --browsers 'chrome' --last-versions 1
+       
       - name: Test with pytest
-        run: |
-           python .venv/web/Tests/test_main_web.py
+        run: python .venv/web/Tests/test_main_web.py
+
+    
+
+          
  
