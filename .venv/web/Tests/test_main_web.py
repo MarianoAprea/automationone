@@ -1,6 +1,6 @@
 from time import sleep
 from selenium import webdriver
-from web.Setup.main import base_url
+from web.setup.principal import base_url
 from selenium.webdriver.common.by import By
 import pytest
 
