@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        python-version: ["3.10"]
+        python-version: ["3.13"]
 
     steps:
       - uses: actions/checkout@v3
@@ -27,16 +27,6 @@ jobs:
       - name: Instala selenium
         run: |
           pip install selenium
-      - name: SeleniumCICD
-           # You may pin to the exact commit or the version.
-            # uses: nakajiss/DockerSeleniumAction@e6ea7ae921226473af620875a8853bad0750a033
-        uses: nakajiss/DockerSeleniumAction@v1.3.7
-          
-        with:
-            test-plan-path: .venv/web/Tests/test_main_web.py
-            # Optional arguments.
-            #args: # optional
-          
      
       - name: Test with pytest
         run: python .venv/web/Tests/test_main_web.py
