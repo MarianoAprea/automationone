@@ -27,7 +27,7 @@ jobs:
         run: |
           pip install pytest
       - name: Test with pytest
-        run: pytest
+        run: pytest .venv/web/Tests/test_main_web.py
 
     
 
