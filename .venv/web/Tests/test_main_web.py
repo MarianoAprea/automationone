@@ -7,11 +7,11 @@ import pytest
 if __name__ == "__main__":
     pytest.main(["test_main_web.py"])
 
-
-
-@pytest.mark.parametrize("driver", [
-    (webdriver.Chrome()),  # (webdriver.Edge()),#(webdriver.Firefox()),
+pytest.mark.parametrize("driver", [
+    (webdriver.Chrome()),# (webdriver.Edge()),#(webdriver.Firefox()),
 ])
+
+
 def test_loginOK(driver):
     driver.get(url=base_url)
     assert "Welcome!" == driver.find_element(by=By.XPATH, value='//*[@id="content"]/div[1]/div/h1').text
