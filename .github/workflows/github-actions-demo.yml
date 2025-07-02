@@ -36,8 +36,8 @@ jobs:
             #args: # optional
           
      
-      #- name: Test with pytest
-        #run: python .venv/web/Tests/test_main_web.py
+      - name: Test with pytest
+        run: python .venv/web/Tests/test_main_web.py
 
     
 
