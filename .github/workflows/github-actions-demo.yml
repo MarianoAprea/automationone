@@ -29,5 +29,6 @@ jobs:
         run: |
           source venv/bin/activate  # En Linux/macOS
           # En Windows: venv\Scripts\activate
+          shell: bash
           working-directory: ./venv/web/Test
           pytest 
