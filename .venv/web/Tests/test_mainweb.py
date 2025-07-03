@@ -1,11 +1,13 @@
 from time import sleep
 from selenium import webdriver
-from web.setup.principal import base_url
+#from web.setup.principal import base_url
 from selenium.webdriver.common.by import By
 import pytest
 
 if __name__ == "__main__":
     pytest.main(["test_mainweb.py"])
+
+base_url ='https://qa-practice.netlify.app/'
 
 @pytest.mark.parametrize("driver", [
     (webdriver.Chrome()), #(webdriver.Edge()), (webdriver.Firefox()),
