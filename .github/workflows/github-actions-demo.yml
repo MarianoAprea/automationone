@@ -5,21 +5,22 @@ on: [push]
 jobs:
   build:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        python-version: ["3.13"]
+    defaults:
+      run:
+        shell: bash
+        working-directory: .venv/web/Tests
 
     steps:
       - uses: actions/checkout@v3
-      - name: Set up Python ${{ matrix.python-version }}
+      - name: Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: ${{ matrix.python-version }}
+          python-version: "3.13"
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-    
+
       - name: Install selenium
         run: |
           pip install selenium
@@ -27,7 +28,8 @@ jobs:
         run: |
           pip install pytest
       - name: Test with pytest
-        run: pytest test_main_web.py
+        run: pytest
+
     
 
           
