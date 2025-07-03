@@ -29,5 +29,5 @@ jobs:
         run: |
           source venv/bin/activate  # En Linux/macOS
           # En Windows: venv\Scripts\activate
-          cd Test
+          cd Tests
           pytest 
