@@ -14,7 +14,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: "3.12"
+          python-version: "3.13"
       
       - name: venv setup
         uses: srvanderplas/action-setup-venv@v1.1.5
