@@ -27,7 +27,7 @@ jobs:
           cache-dependency-path: .venv/requirements.txt
           venv-dir: .venv
           # Command to install python dependencies.
-          install-cmd: if ! test -f **requirements*.txt; then echo "No requirements files"; else python3 -m pip install -r **requirements*.txt; fi
+          install-cmd: if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
                 
       - name: Test with pytest
         run: |
