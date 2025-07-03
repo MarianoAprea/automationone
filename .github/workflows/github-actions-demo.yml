@@ -20,10 +20,10 @@ jobs:
           python -m pip install --upgrade pip
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
     
-      - name: Instala selenium
+      - name: Install selenium
         run: |
           pip install selenium
-      - name: Instala pytest
+      - name: Install pytest
         run: |
           pip install pytest
       - name: Test with pytest
