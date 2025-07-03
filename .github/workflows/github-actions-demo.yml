@@ -28,7 +28,7 @@ jobs:
         run: |
           pip install pytest
       - name: Test with pytest
-        run: pytest test_main_web.py
+        run: pytest test_mainweb.py
     
 
           
