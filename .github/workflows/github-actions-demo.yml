@@ -18,14 +18,17 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-    
-      - name: Install selenium
-        run: |
           pip install selenium
-      - name: Install pytest
-        run: |
           pip install pytest
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+      - name: venv setup
+        uses: srvanderplas/action-setup-venv@v1.1.5
+        with:
+          cache-dependency-path: /requirements.txt
+          #venv-dir: # optional, default is venv
+          # Command to install python dependencies.
+          install-cmd: if ! test -f **requirements*.txt; then echo "No requirements files"; else python3 -m pip install -r **requirements*.txt; fi
+                
       - name: Test with pytest
         run: |
           python -m pytest
