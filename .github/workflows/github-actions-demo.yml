@@ -22,9 +22,9 @@ jobs:
           python -m pip install virtualenv
           python -m virtualenv venv
           source venv/bin/activate
-          python -m pip install -r .venv/requirements.txt # Si tienes un archivo requirements.txt
-          pip install pytest
-          
+          pip install flake8 pytest
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+                   
       - name: Run tests
         run: |
           pytest
