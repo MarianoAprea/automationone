@@ -24,8 +24,8 @@ jobs:
       - name: venv setup
         uses: srvanderplas/action-setup-venv@v1.1.5
         with:
-          cache-dependency-path: /requirements.txt
-          #venv-dir: # optional, default is venv
+          cache-dependency-path: .venv/requirements.txt
+          venv-dir: .venv
           # Command to install python dependencies.
           install-cmd: if ! test -f **requirements*.txt; then echo "No requirements files"; else python3 -m pip install -r **requirements*.txt; fi
                 
