@@ -1,13 +1,14 @@
 name: GitHub Actions Demo
 
 on: [push]
-
+  
 jobs:
   build:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        python-version: ["3.13"]
+    defaults:
+      run:
+        shell: bash
+        working-directory: .venv/web/Tests
 
     steps:
       - uses: actions/checkout@v3
