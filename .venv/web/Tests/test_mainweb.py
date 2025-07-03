@@ -5,7 +5,7 @@ from selenium.webdriver.common.by import By
 import pytest
 
 if __name__ == "__main__":
-    pytest.main(["test_main_web.py"])
+    pytest.main(["test_mainweb.py"])
 
 @pytest.mark.parametrize("driver", [
     (webdriver.Chrome()), #(webdriver.Edge()), (webdriver.Firefox()),
