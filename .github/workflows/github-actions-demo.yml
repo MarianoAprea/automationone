@@ -23,7 +23,7 @@ jobs:
           python -m virtualenv venv
           source venv/bin/activate
           python -m pip install -r .venv/requirements.txt # Si tienes un archivo requirements.txt
-          python -m pip install pytest
+          pip install pytest
           
       - name: Run tests
         run: |
