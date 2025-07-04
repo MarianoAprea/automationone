@@ -23,6 +23,6 @@ jobs:
                  
       - name: Run tests
         run: |
-          working-directory: .venv/web/Tests
+          source: .venv/web/Tests
           pytest
            
