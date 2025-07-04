@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: .venv/web      
+        working-directory: .venv    
 
     steps:
       - uses: actions/checkout@v4
@@ -24,5 +24,5 @@ jobs:
                  
       - name: Run tests
         working-directory: .venv/web/Test
-        run: pytest
+        run: python -m pytest
            
