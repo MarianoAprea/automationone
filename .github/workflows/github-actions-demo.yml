@@ -6,6 +6,9 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: .venv
 
     steps:
       - uses: actions/checkout@v4
@@ -19,12 +22,11 @@ jobs:
           python -m pip install virtualenv
           python -m virtualenv .venv
           source .venv/bin/activate
-          source .venv
           pip install flake8 pytest
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
                  
       - name: Run tests
         run: |
-          source .venv/web/Tests
+          working-directory: .venv/web/Tests
           python -m pytest
            
