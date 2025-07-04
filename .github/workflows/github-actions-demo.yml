@@ -6,8 +6,9 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-  
-      
+    defaults:
+      run:
+        working-directory: .venv\web      
 
     steps:
       - uses: actions/checkout@v4
@@ -22,7 +23,6 @@ jobs:
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
                  
       - name: Run tests
-        run: |
-          source: .venv/web/Tests
-          pytest
+        working-directory: .venv\web\Test
+        run: pytest
            
