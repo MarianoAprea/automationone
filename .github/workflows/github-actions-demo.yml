@@ -19,7 +19,7 @@ jobs:
           python -m pip install virtualenv
           python -m virtualenv .venv
           source .venv/bin/activate
-          source .venv/
+          cd .venv/
           pip install flake8 pytest
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
                  
