@@ -9,13 +9,15 @@ if __name__ == "__main__":
 
 base_url ='https://qa-practice.netlify.app/'
 
-@pytest.mark.parametrize("driver", [
-    (webdriver.Chrome()),
+# @pytest.mark.parametrize("driver", [
+#   (webdriver.Chrome()),
     #(webdriver.Edge()), (webdriver.Firefox()),
-])
+#])
+
+driver = webdriver.Chrome()
 
 
-def test_loginOK(driver):
+def test_loginOK():
 
     driver.get(url=base_url)
     assert "Welcome!" == driver.find_element(by=By.XPATH, value='//*[@id="content"]/div[1]/div/h1').text
