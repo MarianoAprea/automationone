@@ -29,6 +29,7 @@ jobs:
           install-chromedriver: true
       
       - name: Run tests
+        working-directory: enviroment/web/Tests
         run: pytest
         
        
