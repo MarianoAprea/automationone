@@ -6,10 +6,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        shell: bash
-        working-directory: enviroment
+    
 
     steps:
       - uses: actions/checkout@v4
@@ -29,4 +26,4 @@ jobs:
       
       - name: Run tests
         run: pytest
-        working-directory: enviroment/web/Tests
+       
