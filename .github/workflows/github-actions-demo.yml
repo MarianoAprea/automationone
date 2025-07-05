@@ -29,4 +29,4 @@ jobs:
       
       - name: Run tests
         run: pytest
-        working-directory: .venv/web/Test
+        working-directory: ./.venv/web/Test
