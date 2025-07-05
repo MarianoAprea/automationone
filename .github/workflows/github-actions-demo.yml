@@ -28,7 +28,6 @@ jobs:
           chrome-version: latest
           install-dependencies: true
           install-chromedriver: true
-
       
       - name: Run tests
         run: pytest
