@@ -28,6 +28,11 @@ jobs:
           install-dependencies: true
           install-chromedriver: true
       
+      - name: setup-chromedriver
+        uses: nanasess/setup-chromedriver@v2.2.2
+        with: 
+           chromedriver-version: latest
+ 
       - name: Run tests
         working-directory: enviroment/web/Tests
         run: pytest
