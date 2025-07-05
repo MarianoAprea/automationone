@@ -10,7 +10,8 @@ if __name__ == "__main__":
 base_url ='https://qa-practice.netlify.app/'
 
 @pytest.mark.parametrize("driver", [
-    (webdriver.Chrome()), #(webdriver.Edge()), (webdriver.Firefox()),
+    (webdriver.Chrome()),
+    #(webdriver.Edge()), (webdriver.Firefox()),
 ])
 
 
