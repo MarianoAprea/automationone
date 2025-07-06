@@ -8,7 +8,9 @@ base_url ='https://qa-practice.netlify.app/'
 
 
 @pytest.mark.parametrize("driver", [
-    (webdriver.Chrome()), (webdriver.Edge()), (webdriver.Firefox()),
+    (webdriver.Chrome()),
+    (webdriver.Edge()),
+    (webdriver.Firefox()),
 ])
 def test_loginOK(driver):
 
