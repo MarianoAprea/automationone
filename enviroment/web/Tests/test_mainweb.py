@@ -13,7 +13,7 @@ base_url ='https://qa-practice.netlify.app/'
 #  (webdriver.Firefox()),
 # ])
 
-driver = webdriver.Chrome()
+driver = webdriver.Edge()
 
 
 def test_login():
