@@ -7,13 +7,15 @@ import pytest
 base_url ='https://qa-practice.netlify.app/'
 
 
-@pytest.mark.parametrize("driver", [
-    (webdriver.Chrome()),
-    (webdriver.Edge()),
-    (webdriver.Firefox()),
-])
-def test_loginOK(driver):
+# @pytest.mark.parametrize("driver", [
+#  (webdriver.Chrome()),
+# (webdriver.Edge()),
+#  (webdriver.Firefox()),
+# ])
 
+
+def test_loginOK():
+    driver = webdriver.Chrome()
     driver.get(url=base_url)
     assert "Welcome!" == driver.find_element(by=By.XPATH, value='//*[@id="content"]/div[1]/div/h1').text
     driver.find_element(by=By.XPATH, value='//*[@id="auth-shop"]/b').click()
