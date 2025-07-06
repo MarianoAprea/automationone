@@ -30,7 +30,8 @@ jobs:
       
       - name: setup-chromedriver
         uses: nanasess/setup-chromedriver@v2.2.2
-
-      - name: Test with pytest
-        run: python -m pytest
+       
+ 
+      - name: Run tests
         working-directory: enviroment/web/Tests
+        run: python - m pytest
