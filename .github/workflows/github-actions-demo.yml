@@ -32,10 +32,8 @@ jobs:
         uses: nanasess/setup-chromedriver@v2.2.2
 
       - name: Test with pytest
-        run: |
-          coverage run -m pytest  -v -s
+        run: coverage run pyton -m pytest  -v -s
         working-directory: enviroment/web/Tests
 
       - name: Generate Coverage Report
-        run: |
-          coverage report -m
+        run: coverage report -m
