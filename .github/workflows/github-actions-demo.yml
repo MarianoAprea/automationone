@@ -30,10 +30,17 @@ jobs:
       
       - name: setup-chromedriver
         uses: nanasess/setup-chromedriver@v2.2.2
-       
- 
-      - name: Run tests
+
+      - name: Lint with Ruff
+        run: |
+          pip install ruff
+          ruff --format=github --target-version=py310 .
+          continue-on-error: true
+      - name: Test with pytest
+        run: |
+          coverage run -m pytest  -v -s
         working-directory: enviroment/web/Tests
-        run: pytest
-        
-       
+
+      - name: Generate Coverage Report
+        run: |
+          coverage report -m
