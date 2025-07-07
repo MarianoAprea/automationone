@@ -9,8 +9,8 @@ jobs:
     
 
     steps:
-      - name: checkout   
-        uses: actions/checkout@v4
+      - name: Checkout   
+        uses: actions/checkout@v4.2.2
       - name: Set up Python
         uses: actions/setup-python@v5.6.0
         with:
@@ -25,5 +25,5 @@ jobs:
           python -m pip install pytest    
 
       - name: Run tests
-        working-directory: enviroment/web/Tests
-        run: pytest
+        run: |
+             pytest
