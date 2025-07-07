@@ -29,7 +29,13 @@ jobs:
           install-dependencies: true
           install-chromedriver: true
 
-                   
+      - name: SeleniumCICD
+         # You may pin to the exact commit or the version.
+         # uses: nakajiss/DockerSeleniumAction@e6ea7ae921226473af620875a8853bad0750a033
+        uses: nakajiss/DockerSeleniumAction@v1.3.7
+        with:
+           test-plan-path: enviroment/web/Tests/test_mainweb.py
+                             
       - name: Run tests
         working-directory: enviroment/web/Tests
         run: python -m pytest
