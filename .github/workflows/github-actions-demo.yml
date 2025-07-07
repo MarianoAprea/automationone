@@ -5,7 +5,7 @@ on:
     branches: [ "main" ]
 jobs:
   build:
-    runs-on: windows 10
+    runs-on: ubuntu 18.04
     
 
     steps:
