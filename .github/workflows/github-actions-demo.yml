@@ -25,5 +25,5 @@ jobs:
           python -m pip install pytest    
 
       - name: Run tests
-        working-directory: automationone/automationone/enviroment/web/Tests
+        working-directory: enviroment/web/Tests
         run: pytest
