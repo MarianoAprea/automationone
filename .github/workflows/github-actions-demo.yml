@@ -19,10 +19,11 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
+          pip install flake8 pytest
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
           python -m pip install selenium
           python -m pip install pytest    
 
       - name: Run tests
         #working-directory: enviroment/web/Tests
-        run: pytest
+        run: python -m pytest
