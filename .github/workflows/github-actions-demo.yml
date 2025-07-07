@@ -3,6 +3,9 @@ name: GitHub Actions Demo
 on:
   push:
     branches: [ "main" ]
+defaults:
+  run:
+    working-directory: /opt/hostedtoolcache/Python/3.13.4/x64
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -12,7 +15,7 @@ jobs:
       - name: checkout   
         uses: actions/checkout@v4
       - name: Set up Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v5.6.0
         with:
           python-version: "3.13.4"
 
@@ -26,4 +29,4 @@ jobs:
 
       - name: Run tests
         #working-directory: enviroment/web/Tests
-        run: python -m pytest
+        run: pytest
