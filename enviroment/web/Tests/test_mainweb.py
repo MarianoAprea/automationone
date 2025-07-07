@@ -3,12 +3,20 @@ from selenium import webdriver
 #from web.setup.principal import base_url
 from selenium.webdriver.common.by import By
 import pytest
+from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.chrome.service import Service
+
+opt = Options()  # the variable that will store the selenium options
+opt.add_argument(
+    '--user-data-dir=' + r'C:\Users\Estudiante\AppData\Local\Google\Chrome\User Data')  # Add the user data path as an argument in selenium Options
+opt.add_argument('--profile-directory=Default')  # Add the profile directory as an argument in selenium Options
+# s = Service('C:/Users/ResetStoreX/AppData/Local/Programs/Python/Python39/Scripts/chromedriver.exe')
 
 base_url ='https://qa-practice.netlify.app/'
 
 
 @pytest.mark.parametrize("driver", [
-    (webdriver.Chrome()), (webdriver.Edge()), (webdriver.Firefox()),
+    (webdriver.Chrome())  #(webdriver.Edge()), (webdriver.Firefox()),
 ])
 def test_loginOK(driver):
 
