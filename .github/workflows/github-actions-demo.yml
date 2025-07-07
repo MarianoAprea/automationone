@@ -3,9 +3,6 @@ name: GitHub Actions Demo
 on:
   push:
     branches: [ "main" ]
-defaults:
-  run:
-    working-directory:  /home/runner/work/automationone/automationone/enviroment
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -17,7 +14,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v5.6.0
         with:
-          python-version: "3.13.4"
+          python-version: "3.13"
 
       - name: Install dependencies
         run: |
@@ -28,5 +25,5 @@ jobs:
           python -m pip install pytest    
 
       - name: Run tests
-        working-directory: /home/runner/work/automationone/automationone/enviroment/web/Tests
+        working-directory: automationone/automationone/enviroment/web/Tests
         run: pytest
