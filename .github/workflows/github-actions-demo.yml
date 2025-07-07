@@ -23,4 +23,4 @@ jobs:
       
       - name: Run tests
         working-directory: enviroment/web/Tests
-        run: python -m pytest
+        run: pytest
