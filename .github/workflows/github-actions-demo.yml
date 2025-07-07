@@ -28,7 +28,7 @@ jobs:
         uses: browser-actions/setup-chrome@v1.7.3
         with:
           chrome-version: latest
-          install-dependencies: true
+          install-dependencies: false
           install-chromedriver: true
 
                    
