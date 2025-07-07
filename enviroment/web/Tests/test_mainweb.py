@@ -11,6 +11,7 @@ opt = webdriver.ChromeOptions()
 #opt.add_argument("--headless")  #  ejecuta sin mostrar el  navegador
 #opt.add_argument("--user-data-dir=/tmp/user-data")
 opt.add_argument("--no-sandbox")
+opt.add_argument("--incognito")
 opt.add_argument("--disable-extensions")
 opt.add_argument('--ignore-certificate-errors')
 #opt.add_argument("--enable-automation")  #  muestra la barra de que es manejado por un automatizador
