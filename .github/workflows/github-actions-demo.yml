@@ -23,7 +23,12 @@ jobs:
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
           #python -m pip install selenium
           python -m pip install pytest  
-             
+
+      - name: Setup Chrome
+        uses: browser-actions/setup-chrome@v2.0.0
+      - name: setup-chromedriver
+        uses: nanasess/setup-chromedriver@v2.2.2
+
       - name: Run tests
         run: |
           python  -m pytest -v
