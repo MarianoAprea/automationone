@@ -32,3 +32,7 @@ def test_login():
     sleep(1)
     assert "SHOPPING CART" == driver.find_element(by=By.XPATH, value='//*[@id="prooood"]/section[1]/h2').text
     driver.quit()
+
+
+def test_exito():
+    assert 1 == 1
