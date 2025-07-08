@@ -28,7 +28,7 @@ jobs:
         uses: browser-actions/setup-chrome@v2.0.0
         with:
           install-chromedriver: 'true'
-
+          install-dependencies: 'true'
       - name: Run tests
         working-directory: enviroment/web/Tests
         run: |
