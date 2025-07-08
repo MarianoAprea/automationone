@@ -23,11 +23,8 @@ jobs:
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
           python -m pip install selenium
           python -m pip install pytest   
-         
-      - name: install chromedriver_installer
-        run: |
-          python -m pip install chromedriver_installer
-          
+      
+
       - name: Run tests
         run: |
           python  -m pytest -v
