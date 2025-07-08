@@ -14,7 +14,7 @@ opt.add_argument("--no-sandbox")
 opt.add_argument("--incognito")
 opt.add_argument("--disable-extensions")
 opt.add_argument('--ignore-certificate-errors')
-opt.add_argument('log-level=3')
+opt.add_argument('log-level=1')
 opt.add_argument('--disable-dev-shm-usage')
 opt.add_experimental_option('excludeSwitches', ['enable-logging'])
 #opt.add_argument("--enable-automation")  #  muestra la barra de que es manejado por un automatizador
