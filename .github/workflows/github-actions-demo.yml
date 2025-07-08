@@ -29,6 +29,11 @@ jobs:
         with:
           install-chromedriver: 'true'
           install-dependencies: 'true'
+
+      - name: Chrome/Chromedriver Matcher Action
+        uses: jamesmortensen/chromedriver-matcher-action@v1.0.1
+
+
       - name: Run tests
         working-directory: enviroment/web/Tests
         run: |
