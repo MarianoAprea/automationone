@@ -21,7 +21,7 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-          #python -m pip install selenium
+          python -m pip install selenium
           python -m pip install pytest  
 
       - name: Setup Chrome
@@ -30,8 +30,7 @@ jobs:
           install-chromedriver: 'true'
           install-dependencies: 'true'
 
-      - name: Chrome/Chromedriver Matcher Action
-        uses: jamesmortensen/chromedriver-matcher-action@v1.0.1
+
 
 
       - name: Run tests
