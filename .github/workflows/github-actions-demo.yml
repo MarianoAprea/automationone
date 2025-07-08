@@ -29,5 +29,5 @@ jobs:
 
       - name: Run tests
         run: |
-          python  -m pytest test_mainweb.py
+          python  -m pytest -v
         working-directory: enviroment/web/Tests
