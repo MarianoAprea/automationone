@@ -6,7 +6,9 @@ on:
 jobs:
   build:
     runs-on: ubuntu-24.04    
-
+    defaults:
+      run:
+        working-directory: ./enviroment
     steps:
       - name: Checkout   
         uses: actions/checkout@v4.2.2
