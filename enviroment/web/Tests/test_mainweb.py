@@ -4,6 +4,10 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 import pytest
 import tempfile
+from selenium.webdriver.chrome.service import Service as ChromeService
+from webdriver_manager.chrome import ChromeDriverManager
+
+
 
 base_url ='https://qa-practice.netlify.app/'
 
@@ -25,7 +29,7 @@ opt.add_experimental_option('excludeSwitches', ['enable-logging'])
 #  (webdriver.Firefox()),
 # ])
 def test_dashboard():
-    driver = webdriver.Chrome(options=opt)
+    driver = webdriver.Chrome(options=opt, service=ChromeService(ChromeDriverManager().install()))
     driver.get(url=base_url)
     assert "Welcome!" == driver.find_element(by=By.XPATH, value='//*[@id="content"]/div[1]/div/h1').text
     driver.quit()
