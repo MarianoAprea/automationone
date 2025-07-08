@@ -15,7 +15,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v5.6.0
         with:
-          python-version: "3.13.5"
+          python-version: "3.13"
 
       - name: Install dependencies
         run: |
@@ -26,9 +26,9 @@ jobs:
 
       - name: Setup Chrome
         uses: browser-actions/setup-chrome@v2.0.0
-      - name: setup-chromedriver
-        uses: nanasess/setup-chromedriver@v2.2.2
-
+        with:
+          chrome-version: 'stable'
+          install-chromedriver: 'true'
 
       - name: Run tests
         run: |
