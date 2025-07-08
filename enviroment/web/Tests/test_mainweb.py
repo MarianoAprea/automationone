@@ -3,12 +3,13 @@ from selenium import webdriver
 #from web.setup.principal import base_url
 from selenium.webdriver.common.by import By
 import pytest
+import tempfile
 
 base_url ='https://qa-practice.netlify.app/'
 
 opt = webdriver.ChromeOptions()
 # opt.add_argument("--headless=new")  #  ejecuta sin mostrar el  navegador -----falla
-#opt.add_argument("--user-data-dir=/tmp/user-data")
+opt.add_argument(f"--user-data-dir={tempfile.mkdtemp()}")
 opt.add_argument("--no-sandbox")
 opt.add_argument("--incognito")
 opt.add_argument("--disable-extensions")
