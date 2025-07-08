@@ -24,7 +24,9 @@ jobs:
           #python -m pip install selenium
           python -m pip install pytest  
           pip install webdriver-manager
-      
+
+      - name: Setup Chrome
+        uses: browser-actions/setup-chrome@v2.0.0
 
       - name: Run tests
         run: |
