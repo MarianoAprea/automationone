@@ -25,10 +25,6 @@ jobs:
           python -m pip install selenium
           python -m pip install pytest   
          
-      - name: Install chromium-chromedriver
-        run: |
-          apt install chromium-chromedriver
-
       - name: List files in the repository
         run: |
           ls ${{ github.workspace }}
