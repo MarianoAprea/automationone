@@ -24,16 +24,18 @@ jobs:
           python -m pip install selenium
           python -m pip install pytest  
 
-      - name: Install Google Chrome 
+      - name: Setup Chrome
+        uses: browser-actions/setup-chrome@v2.0.0
+        with:    
+          chrome-version: "default"
+          install-dependencies: "true"
+          install-chromedriver: "true"
 
-        run: |
-              chmod +x ./opt/hostedtoolcache/InstallChrome.sh
-
-
-
-
+      
+      - name: Chrome/Chromedriver Matcher Action
+        uses: jamesmortensen/chromedriver-matcher-action@v1.0.1
+          
       - name: Run tests
         working-directory: enviroment/web/Tests
-        run: |
-          python  -m pytest -v
+        run: python  -m pytest -v
         
