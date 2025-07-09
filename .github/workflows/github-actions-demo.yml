@@ -24,11 +24,10 @@ jobs:
           python -m pip install selenium
           python -m pip install pytest  
 
-      - name: Setup Chrome
-        uses: browser-actions/setup-chrome@v2.0.0
-        with:
-          install-chromedriver: 'true'
-          install-dependencies: 'true'
+      - name: Install Google Chrome 
+
+        run: |
+              chmod +x ./scripts/InstallChrome.sh
 
 
 
