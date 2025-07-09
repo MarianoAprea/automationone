@@ -27,9 +27,9 @@ jobs:
       - name: Setup Chrome
         uses: browser-actions/setup-chrome@v2.0.0
         with:    
-          chrome-version: " 138.0.7204.96"
-          install-dependencies: "true"
-          install-chromedriver: "true"
+          chrome-version: latest
+          install-dependencies: true
+          install-chromedriver: true
 
       
       - name: Chrome/Chromedriver Matcher Action
