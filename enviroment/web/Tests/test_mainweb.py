@@ -3,6 +3,7 @@ from selenium import webdriver
 #from web.setup.principal import base_url
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.service import Service
+from webdriver_manager.chrome import ChromeDriverManager
 import pytest
 
 # import tempfile
@@ -20,13 +21,15 @@ opt.add_argument('log-level=3')
 opt.add_argument('--disable-dev-shm-usage')
 opt.add_experimental_option('excludeSwitches', ['enable-logging'])
 service = Service()
+
+
 # @pytest.mark.parametrize("driver", [
 # (webdriver.Chrome(options=opt)),
 # (webdriver.Edge()),
 #  (webdriver.Firefox()),
 # ])
 def test_dashboard():
-    driver = webdriver.Chrome(service=service, options=opt)
+    driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=opt)
     driver.get(url=base_url)
     assert "Welcome!" == driver.find_element(by=By.XPATH, value='//*[@id="content"]/div[1]/div/h1').text
     driver.close()
