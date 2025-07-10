@@ -31,11 +31,11 @@ opt.add_experimental_option('excludeSwitches', ['enable-logging'])
 #  (webdriver.Firefox()),
 # ])
 def test_dashboard():
-    # driver = webdriver.Chrome(options=opt)
+    driver = webdriver.Chrome(options=opt)
 
     # driver = webdriver.Chrome('C:\Users\Estudiante\AppData\Local\Programs\Python\Python313\Scripts\chromedriver.exe')
 
-    driver = webdriver.Chrome(options=opt, path='/opt/hostedtoolcache/setup-chrome/chromedriver/stable/x64')
+   # driver = webdriver.Chrome(options=opt, path='/opt/hostedtoolcache/setup-chrome/chromedriver/stable/x64')
 
     driver.get(url=base_url)
     assert "Welcome!" == driver.find_element(by=By.XPATH, value='//*[@id="content"]/div[1]/div/h1').text
