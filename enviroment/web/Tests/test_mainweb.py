@@ -31,9 +31,9 @@ opt.add_experimental_option('excludeSwitches', ['enable-logging'])
 #  (webdriver.Firefox()),
 # ])
 def test_dashboard():
-    driver = webdriver.Chrome(options=opt)
+    driver = webdriver.Chrome()
 
-    # driver = webdriver.Chrome('C:\Users\Estudiante\AppData\Local\Programs\Python\Python313\Scripts\chromedriver.exe')
+    # driver = webdriver.Chrome('usr/local/bin/chromedriver')
 
    # driver = webdriver.Chrome(options=opt, path='/opt/hostedtoolcache/setup-chrome/chromedriver/stable/x64')
 
