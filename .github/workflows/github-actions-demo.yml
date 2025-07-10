@@ -42,6 +42,7 @@ jobs:
           wget -N https://storage.googleapis.com/chrome-for-testing-public/138.0.7204.94/linux64/chromedriver-linux64.zip
           unzip chromedriver-linux64.zip -d /opt/hostedtoolcache/Python/3.13.5/x64/bin/
           chmod +x ~/opt/hostedtoolcache/Python/3.13.5/x64/bin/chromedriver-linux64/chromedriver
+          chmod 777 ~/opt/hostedtoolcache/Python/3.13.5/x64/bin/chromedriver-linux64/chromedriver
           sudo mv ~/opt/hostedtoolcache/Python/3.13.5/x64/bin/chromedriver-linux64/chromedriver /usr/local/bin/
           ls -l chromedriver
         #sudo ln -s /opt/hostedtoolcache/Python/3.13.5/x64/lib/python3.13/site-packages/selenium/webdriver/chrome/chromedriver /usr/bin/chromedriver2
