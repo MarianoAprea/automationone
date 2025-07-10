@@ -40,9 +40,9 @@ jobs:
       - name: Install chromedriver
         run: |
           wget -N https://storage.googleapis.com/chrome-for-testing-public/138.0.7204.94/linux64/chromedriver-linux64.zip
-          unzip chromedriver-linux64.zip -d /opt/hostedtoolcache/Python/3.13.5/x64
+          unzip chromedriver-linux64.zip -d /opt/hostedtoolcache/Python/3.13.5/x64/lib/python3.13/site-packages/selenium/webdriver/chrome/
           #chmod +x chromedriver
-          sudo ln -s /opt/hostedtoolcache/Python/3.13.5/x64/chromedriver-linux64/chromedriver /usr/bin/chromedriver2
+          sudo ln -s /opt/hostedtoolcache/Python/3.13.5/x64/lib/python3.13/site-packages/selenium/webdriver/chrome/chromedriver /usr/bin/chromedriver2
       #sudo ln -s /opt/hostedtoolcache/Python/3.13.5/x64/chromedriver-linux64/chromedriver /usr/local/bin/chromedriver
       - name: Run tests
         working-directory: enviroment/web/Tests
