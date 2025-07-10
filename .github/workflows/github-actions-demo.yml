@@ -21,17 +21,30 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-          python -m pip install selenium
+          python -m pip install -U selenium
           python -m pip install pytest  
 
-      - name: Setup Chrome
-        uses: browser-actions/setup-chrome@v2.0.0
-        with:
-          install-chromedriver: 'true'
-          install-dependencies: 'true'
+     # - name: Setup Chrome
+     #   uses: browser-actions/setup-chrome@v2.0.0
+      #  with:
+      #    install-chromedriver: 'true'
+      #    install-dependencies: 'true'
+      - name: Install chrome
+        run: |
+          sudo apt-get install libxss1 libindicator7
+          wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+          sudo dpkg -i google-chrome*.deb
+          sudo apt-get install -f
 
-
-
+      
+      - name: Install chromedriver
+        run: |
+          wget -N http://chromedriver.storage.googleapis.com/2.26/chromedriver_linux64.zip
+          unzip chromedriver_linux64.zip
+          chmod +x chromedriver
+          sudo mv -f chromedriver /usr/local/share/chromedriver
+          sudo ln -s /usr/local/share/chromedriver /usr/local/bin/chromedriver
+        # sudo ln -s /usr/local/share/chromedriver /usr/bin/chromedriver
 
       - name: Run tests
         working-directory: enviroment/web/Tests
