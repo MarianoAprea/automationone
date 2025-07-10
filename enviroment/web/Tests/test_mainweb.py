@@ -4,8 +4,7 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.service import Service
 
-
-import pytest
+# import pytest
 
 base_url ='https://qa-practice.netlify.app/'
 
@@ -18,13 +17,10 @@ opt.add_argument("--disable-extensions")
 opt.add_argument('--ignore-certificate-errors')
 opt.add_argument('log-level=3')
 opt.add_argument('--disable-dev-shm-usage')
+
 opt.add_experimental_option('excludeSwitches', ['enable-logging'])
 
 
-# ubuntu_path="/opt/hostedtoolcache/setup-chrome/chromedriver/stable/x64"
-
-
-serv = Service('C:\Users\Estudiante\AppData\Local\Programs\Python\Python313\Scripts\chromedriver.exe')
 
 
 # @pytest.mark.parametrize("driver", [
@@ -35,12 +31,9 @@ serv = Service('C:\Users\Estudiante\AppData\Local\Programs\Python\Python313\Scri
 def test_dashboard():
    # driver = webdriver.Chrome()
 
-   # driver = webdriver.Chrome(executable_path= "\Users\Estudiante\AppData\Local\Programs\Python\Python313\Scripts\chromedriver.exe")
-    #driver = webdriver.Chrome(options=opt, service=serv)
+   driver = webdriver.Chrome(options=opt, service=Service(executable_path="/usr/bin/chromedriver"))
 
-    #driver = webdriver.Chrome(options=opt, path='/opt/hostedtoolcache/setup-chrome/chromedriver/stable/x64')
-
-   driver = webdriver.Chrome('usr/local/bin/chromedriver')
+   #driver = webdriver.Chrome()
 
    # driver = webdriver.Chrome(options=opt, path='/opt/hostedtoolcache/setup-chrome/chromedriver/stable/x64')
 
