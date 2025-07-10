@@ -40,7 +40,7 @@ jobs:
       - name: Install chromedriver
         run: |
           wget -N https://storage.googleapis.com/chrome-for-testing-public/138.0.7204.94/linux64/chromedriver-linux64.zip
-          unzip chromedriver-linux64.zip
+          unzip chromedriver-linux64.zip -d /opt/hostedtoolcache/Python/3.13.5/x64
           chmod +x chromedriver
           sudo mv -f chromedriver enviroment/web/Tests/test_mainweb.py
           sudo ln -s enviroment/web/Tests/test_mainweb.py /usr/local/bin/chromedriver
