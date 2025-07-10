@@ -43,7 +43,7 @@ jobs:
           unzip chromedriver-linux64.zip
           chmod 777 chromedriver-linux64/chromedriver
           chmod +x chromedriver-linux64/chromedriver
-          sudo mv -f chromedriver /usr/local/share/chromedriver
+          sudo mv -f chromedriver-linux64/chromedriver /usr/local/share/chromedriver
           sudo ln -s /usr/local/share/chromedriver /usr/local/bin/chromedriver
           sudo ln -s /usr/local/share/chromedriver /usr/bin/chromedriver
 
