@@ -2,6 +2,8 @@ from time import sleep
 from selenium import webdriver
 #from web.setup.principal import base_url
 from selenium.webdriver.common.by import By
+from selenium.webdriver.chrome.service import Service
+
 
 import pytest
 
@@ -22,7 +24,7 @@ opt.add_experimental_option('excludeSwitches', ['enable-logging'])
 # ubuntu_path="/opt/hostedtoolcache/setup-chrome/chromedriver/stable/x64"
 
 
-
+serv = Service('C:\Users\Estudiante\AppData\Local\Programs\Python\Python313\Scripts\chromedriver.exe')
 
 
 # @pytest.mark.parametrize("driver", [
@@ -33,9 +35,10 @@ opt.add_experimental_option('excludeSwitches', ['enable-logging'])
 def test_dashboard():
     # driver = webdriver.Chrome(options=opt)
 
-    # driver = webdriver.Chrome('C:\Users\Estudiante\AppData\Local\Programs\Python\Python313\Scripts\chromedriver.exe')
+   # driver = webdriver.Chrome(executable_path= "\Users\Estudiante\AppData\Local\Programs\Python\Python313\Scripts\chromedriver.exe")
+    #driver = webdriver.Chrome(options=opt, service=serv)
 
-    driver = webdriver.Chrome(options=opt, path='/opt/hostedtoolcache/setup-chrome/chromedriver/stable/x64')
+    #driver = webdriver.Chrome(options=opt, path='/opt/hostedtoolcache/setup-chrome/chromedriver/stable/x64')
 
     driver.get(url=base_url)
     assert "Welcome!" == driver.find_element(by=By.XPATH, value='//*[@id="content"]/div[1]/div/h1').text
