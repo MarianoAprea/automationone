@@ -19,6 +19,11 @@ opt.add_argument('--disable-dev-shm-usage')
 opt.add_experimental_option('excludeSwitches', ['enable-logging'])
 
 
+# ubuntu_path="/opt/hostedtoolcache/setup-chrome/chromedriver/stable/x64"
+
+
+
+
 
 # @pytest.mark.parametrize("driver", [
 # (webdriver.Chrome(options=opt)),
@@ -26,9 +31,12 @@ opt.add_experimental_option('excludeSwitches', ['enable-logging'])
 #  (webdriver.Firefox()),
 # ])
 def test_dashboard():
-    sleep(10)
-    driver = webdriver.Chrome(options=opt)
-    sleep(10)
+    # driver = webdriver.Chrome(options=opt)
+
+    # driver = webdriver.Chrome('C:\Users\Estudiante\AppData\Local\Programs\Python\Python313\Scripts\chromedriver.exe')
+
+    driver = webdriver.Chrome(options=opt, path='/opt/hostedtoolcache/setup-chrome/chromedriver/stable/x64')
+
     driver.get(url=base_url)
     assert "Welcome!" == driver.find_element(by=By.XPATH, value='//*[@id="content"]/div[1]/div/h1').text
     driver.close()
