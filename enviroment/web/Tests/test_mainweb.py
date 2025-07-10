@@ -2,11 +2,8 @@ from time import sleep
 from selenium import webdriver
 #from web.setup.principal import base_url
 from selenium.webdriver.common.by import By
-from selenium.webdriver.chrome.service import Service
-from webdriver_manager.chrome import ChromeDriverManager
-import pytest
 
-# import tempfile
+import pytest
 
 base_url ='https://qa-practice.netlify.app/'
 
@@ -20,7 +17,7 @@ opt.add_argument('--ignore-certificate-errors')
 opt.add_argument('log-level=3')
 opt.add_argument('--disable-dev-shm-usage')
 opt.add_experimental_option('excludeSwitches', ['enable-logging'])
-service = Service()
+
 
 
 # @pytest.mark.parametrize("driver", [
@@ -29,7 +26,7 @@ service = Service()
 #  (webdriver.Firefox()),
 # ])
 def test_dashboard():
-    driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=opt)
+    driver = webdriver.Chrome(options=opt)
     driver.get(url=base_url)
     assert "Welcome!" == driver.find_element(by=By.XPATH, value='//*[@id="content"]/div[1]/div/h1').text
     driver.close()
@@ -37,7 +34,7 @@ def test_dashboard():
 
 
 def test_login():
-    driver = webdriver.Chrome(service=service, options=opt)
+    driver = webdriver.Chrome(options=opt)
     driver.get(url=base_url)
     driver.find_element(by=By.XPATH, value='//*[@id="auth-shop"]/b').click()
     driver.find_element(by=By.XPATH, value='// *[ @ id = "email"]').send_keys('admin@admin.com')
