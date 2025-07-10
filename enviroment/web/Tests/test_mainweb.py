@@ -2,6 +2,7 @@ from time import sleep
 from selenium import webdriver
 #from web.setup.principal import base_url
 from selenium.webdriver.common.by import By
+from selenium.webdriver.chrome.service import Service
 import pytest
 
 # import tempfile
@@ -18,21 +19,22 @@ opt.add_argument('--ignore-certificate-errors')
 opt.add_argument('log-level=3')
 opt.add_argument('--disable-dev-shm-usage')
 opt.add_experimental_option('excludeSwitches', ['enable-logging'])
-
+service = Service()
 # @pytest.mark.parametrize("driver", [
 # (webdriver.Chrome(options=opt)),
 # (webdriver.Edge()),
 #  (webdriver.Firefox()),
 # ])
 def test_dashboard():
-    driver = webdriver.Chrome(options=opt)
+    driver = webdriver.Chrome(service=service, options=opt)
     driver.get(url=base_url)
     assert "Welcome!" == driver.find_element(by=By.XPATH, value='//*[@id="content"]/div[1]/div/h1').text
+    driver.close()
     driver.quit()
 
 
 def test_login():
-    driver = webdriver.Chrome(options=opt)
+    driver = webdriver.Chrome(service=service, options=opt)
     driver.get(url=base_url)
     driver.find_element(by=By.XPATH, value='//*[@id="auth-shop"]/b').click()
     driver.find_element(by=By.XPATH, value='// *[ @ id = "email"]').send_keys('admin@admin.com')
@@ -40,6 +42,7 @@ def test_login():
     driver.find_element(by=By.ID, value='submitLoginBtn').click()
     sleep(1)
     assert "SHOPPING CART" == driver.find_element(by=By.XPATH, value='//*[@id="prooood"]/section[1]/h2').text
+    driver.close()
     driver.quit()
 
 def test_exito():
