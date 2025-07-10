@@ -35,18 +35,16 @@ serv = Service('C:\Users\Estudiante\AppData\Local\Programs\Python\Python313\Scri
 def test_dashboard():
    # driver = webdriver.Chrome()
 
-<<<<<<< HEAD
    # driver = webdriver.Chrome(executable_path= "\Users\Estudiante\AppData\Local\Programs\Python\Python313\Scripts\chromedriver.exe")
     #driver = webdriver.Chrome(options=opt, service=serv)
 
     #driver = webdriver.Chrome(options=opt, path='/opt/hostedtoolcache/setup-chrome/chromedriver/stable/x64')
-=======
-    driver = webdriver.Chrome('usr/local/bin/chromedriver')
+
+   driver = webdriver.Chrome('usr/local/bin/chromedriver')
 
    # driver = webdriver.Chrome(options=opt, path='/opt/hostedtoolcache/setup-chrome/chromedriver/stable/x64')
->>>>>>> 821389ba1913afcd08ef291dfd0c14c77dd68187
 
-    driver.get(url=base_url)
+   driver.get(url=base_url)
     assert "Welcome!" == driver.find_element(by=By.XPATH, value='//*[@id="content"]/div[1]/div/h1').text
     driver.close()
     driver.quit()
