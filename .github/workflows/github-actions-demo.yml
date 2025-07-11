@@ -39,12 +39,12 @@ jobs:
           wget -N https://storage.googleapis.com/chrome-for-testing-public/138.0.7204.94/linux64/chromedriver-linux64.zip
           echo "Directorio actual: $(pwd)"
           echo "Directorio de trabajo: ${{ github.workspace }}"
+          run ls
           unzip chromedriver-linux64.zip 
-          echo "Directorio actual: $(pwd)"
-          echo "Directorio de trabajo: ${{ github.workspace }}"
-          sudo chmod +x ~./chromedriver
-          sudo chmod 777 ~./chromedriver
-          sudo mv chromedriver /usr/local/bin/chromedriver
+          run ls
+          sudo chmod +x chromedriver-linux64/chromedriver
+          sudo chmod 777 chromedriver-linux64/chromedriver
+          sudo mv chromedriver-linux64/chromedriver /usr/local/bin/chromedriver
         #sudo ln -s /opt/hostedtoolcache/Python/3.13.5/x64/lib/python3.13/site-packages/selenium/webdriver/chrome/chromedriver /usr/bin/chromedriver2
         #sudo ln -s /opt/hostedtoolcache/Python/3.13.5/x64/chromedriver-linux64/chromedriver /usr/local/bin/chromedriver
       - name: Run tests
