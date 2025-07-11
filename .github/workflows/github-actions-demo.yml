@@ -40,6 +40,8 @@ jobs:
           echo "Directorio actual: $(pwd)"
           echo "Directorio de trabajo: ${{ github.workspace }}"
           unzip chromedriver-linux64.zip 
+          echo "Directorio actual: $(pwd)"
+          echo "Directorio de trabajo: ${{ github.workspace }}"
           sudo chmod +x ~./chromedriver
           sudo chmod 777 ~./chromedriver
           sudo mv chromedriver /usr/local/bin/chromedriver
