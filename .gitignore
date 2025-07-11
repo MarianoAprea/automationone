@@ -2,3 +2,4 @@
 /.idea/workspace.xml
 enviroment/web/Setup/__pycache__/principal.cpython-313.pyc
 enviroment/web/Tests/__pycache__/test_main_web.cpython-313-pytest-8.4.1.pyc
+enviroment/web/Tests/__pycache__/principal.cpython-313.pyc
