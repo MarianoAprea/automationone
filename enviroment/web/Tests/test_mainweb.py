@@ -4,11 +4,11 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.chrome.options import Options
-from webdriver_manager.chrome import ChromeDriverManager
+# from webdriver_manager.chrome import ChromeDriverManager
 import tempfile
 import os
 from selenium.webdriver import Chrome
-from webdriver_manager.core.os_manager import ChromeType
+#from webdriver_manager.core.os_manager import ChromeType
 import pytest
 
 base_url ='https://qa-practice.netlify.app/'
