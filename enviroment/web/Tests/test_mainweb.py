@@ -14,7 +14,7 @@ import pytest
 base_url ='https://qa-practice.netlify.app/'
 
 opt = Options()
-
+opt.add_argument('--headless')
 opt.add_argument(f"--user-data-dir={tempfile.mkdtemp()}")
 opt.add_argument("--no-sandbox")
 opt.add_argument("--incognito")
