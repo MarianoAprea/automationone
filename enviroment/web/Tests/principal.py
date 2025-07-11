@@ -15,9 +15,10 @@ def configurardatos():
     opt.add_argument('--ignore-certificate-errors')
     opt.add_argument('log-level=3')
     opt.add_argument('--disable-dev-shm-usage')
+    opt.add_argument('--remote-debugging-port=9222')
     opt.add_argument('--aggressive-cache-discard')
     opt.add_experimental_option('excludeSwitches', ['enable-logging'])
     service = Service('/usr/local/bin/chromedriver')
-
     driver = webdriver.Chrome(service=service, options=opt)
+
     return urldeweb, driver
