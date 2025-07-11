@@ -4,6 +4,7 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.service import Service
 import tempfile
+import os
 # import pytest
 
 base_url ='https://qa-practice.netlify.app/'
@@ -19,8 +20,8 @@ opt.add_argument('log-level=3')
 opt.add_argument('--disable-dev-shm-usage')
 
 opt.add_experimental_option('excludeSwitches', ['enable-logging'])
-opt.binary_location("/usr/local/bin/chromedriver")
 
+chromedriver_path = "usr/local/bin/chromedriver"
 
 
 # @pytest.mark.parametrize("driver", [
@@ -29,16 +30,15 @@ opt.binary_location("/usr/local/bin/chromedriver")
 #  (webdriver.Firefox()),
 # ])
 def test_dashboard():
-    driver = webdriver.Chrome(options=opt)
+    driver = webdriver.Chrome(executable_path=chromedriver_path, options=opt)
     # driver = webdriver.Chrome(options=opt, service=Service(executable_path="/usr/local/bin/chromedriver"))
     driver.get(url=base_url)
     assert "Welcome!" == driver.find_element(by=By.XPATH, value='//*[@id="content"]/div[1]/div/h1').text
-    driver.close()
     driver.quit()
 
 
 def test_login():
-    driver = webdriver.Chrome(options=opt)
+    driver = webdriver.Chrome(executable_path=chromedriver_path, options=opt)
     driver.get(url=base_url)
     driver.find_element(by=By.XPATH, value='//*[@id="auth-shop"]/b').click()
     driver.find_element(by=By.XPATH, value='// *[ @ id = "email"]').send_keys('admin@admin.com')
@@ -46,7 +46,6 @@ def test_login():
     driver.find_element(by=By.ID, value='submitLoginBtn').click()
     sleep(1)
     assert "SHOPPING CART" == driver.find_element(by=By.XPATH, value='//*[@id="prooood"]/section[1]/h2').text
-    driver.close()
     driver.quit()
 
 def test_exito():
