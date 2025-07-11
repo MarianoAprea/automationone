@@ -43,8 +43,8 @@ jobs:
                ls -R /home/runner/work/automationone/automationone/enviroment/chromedriver-linux64
           sudo chmod +x chromedriver-linux64/chromedriver
           sudo chmod 777 chromedriver-linux64/chromedriver
-          #sudo mv chromedriver-linux64/chromedriver /usr/local/bin/chromedriver
-          sudo ln -s /home/runner/work/automationone/automationone/enviroment/chromedriver-linux64/chromedriver /usr/local/bin/chromedriver
+          sudo mv chromedriver-linux64/chromedriver enviroment/web/Tests/chromedriver
+          #sudo ln -s /home/runner/work/automationone/automationone/enviroment/chromedriver-linux64/chromedriver /usr/local/bin/chromedriver
         #sudo ln -s /opt/hostedtoolcache/Python/3.13.5/x64/chromedriver-linux64/chromedriver /usr/local/bin/chromedriver
       - name: Run tests
         working-directory: enviroment/web/Tests

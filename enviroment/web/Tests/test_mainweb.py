@@ -31,7 +31,7 @@ opt.add_experimental_option('excludeSwitches', ['enable-logging'])
 def test_dashboard():
    # driver = webdriver.Chrome()
 
-   driver = webdriver.Chrome(options=opt, service=Service(executable_path="/usr/local/bin/chromedriver"))
+   driver = webdriver.Chrome(options=opt, service=Service(executable_path="enviroment/web/Tests/chromedriver"))
 
    driver.get(url=base_url)
    assert "Welcome!" == driver.find_element(by=By.XPATH, value='//*[@id="content"]/div[1]/div/h1').text
