@@ -11,7 +11,7 @@ from selenium.webdriver import Chrome
 #from webdriver_manager.core.os_manager import ChromeType
 import pytest
 
-url, driver = principal.configurardatos()
+url, driver = configurardatos()
 
 
 # base_url ='https://qa-practice.netlify.app/'
