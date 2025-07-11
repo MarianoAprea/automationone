@@ -19,7 +19,7 @@ opt.add_argument('log-level=3')
 opt.add_argument('--disable-dev-shm-usage')
 
 opt.add_experimental_option('excludeSwitches', ['enable-logging'])
-
+opt.binary_location("/usr/local/bin/chromedriver")
 
 
 
@@ -29,14 +29,12 @@ opt.add_experimental_option('excludeSwitches', ['enable-logging'])
 #  (webdriver.Firefox()),
 # ])
 def test_dashboard():
-   # driver = webdriver.Chrome()
-
-   driver = webdriver.Chrome(options=opt, service=Service(executable_path="/usr/local/bin/chromedriver"))
-
-   driver.get(url=base_url)
-   assert "Welcome!" == driver.find_element(by=By.XPATH, value='//*[@id="content"]/div[1]/div/h1').text
-   driver.close()
-   driver.quit()
+    driver = webdriver.Chrome(options=opt)
+    # driver = webdriver.Chrome(options=opt, service=Service(executable_path="/usr/local/bin/chromedriver"))
+    driver.get(url=base_url)
+    assert "Welcome!" == driver.find_element(by=By.XPATH, value='//*[@id="content"]/div[1]/div/h1').text
+    driver.close()
+    driver.quit()
 
 
 def test_login():
