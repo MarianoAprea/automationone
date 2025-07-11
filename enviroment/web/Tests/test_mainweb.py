@@ -1,6 +1,6 @@
 from time import sleep
 from selenium import webdriver
-import principal
+import web.setup.principal
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.chrome.options import Options
