@@ -1,6 +1,7 @@
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.chrome.options import Options
 import tempfile
+from selenium import webdriver
 
 
 def configurardatos():
