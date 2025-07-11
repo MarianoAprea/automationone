@@ -28,7 +28,6 @@ opt.add_experimental_option('excludeSwitches', ['enable-logging'])
 
 service = Service('/usr/local/bin/chromedriver')
 
-driver = webdriver.Chrome(service=service, options=options)
 
 # @pytest.mark.parametrize("driver", [
 # (webdriver.Chrome(options=opt)),
