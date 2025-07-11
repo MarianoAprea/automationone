@@ -6,32 +6,60 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout   
+        uses: actions/checkout@v4.2.2
       - name: Set up Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v5.6.0
         with:
-          python-version: '3.13' 
+          python-version: "3.13"
+
+      - name: Install Chrome
+        run: |
+          wget -q -O - https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb 
+          sudo mkdir -p /etc/apt/sources.list.d
+          sudo sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list'
+          sudo apt-get update
+          sudo apt-get -y install google-chrome-stable
+      - name: Install ChromeDriver
+        run: |
+          CHROMEDRIVER_VERSION="138.0.7204.94"
+          echo "Installing ChromeDriver version: $CHROMEDRIVER_VERSION"
+          wget -q "https://edgedl.me.gvt1.com/edgedl/chrome/chrome-for-testing/$CHROMEDRIVER_VERSION/linux64/chromedriver-linux64.zip"
+          unzip chromedriver-linux64.zip
+          chmod +x chromedriver-linux64/chromedriver
+          sudo mv chromedriver-linux64/chromedriver /usr/local/bin/
+
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install selenium
-          python -m pip install pytest
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-     
-      - name: Setup Chrome
-        uses: browser-actions/setup-chrome@v1.7.3
-        with:
-          chrome-version: latest
-          install-dependencies: true
-          install-chromedriver: true
-      
-      - name: setup-chromedriver
-        uses: nanasess/setup-chromedriver@v2.2.2
-       
- 
+          python -m pip install -U selenium
+          python -m pip install pytest  
+     # - name: Setup Chrome
+     #   uses: browser-actions/setup-chrome@v2.0.0
+      #  with:
+      #    install-chromedriver: 'true'
+      #    install-dependencies: 'true'
+          #- name: Install chrome
+          # run: |
+          # sudo apt-get install libxss1 libindicator7
+          #  wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+          #  sudo dpkg -i google-chrome*.deb
+        # sudo apt-get install -f
+        #- name: Install chromedriver
+        #   run: |
+        #   wget -N https://storage.googleapis.com/chrome-for-testing-public/138.0.7204.94/linux64/chromedriver-linux64.zip
+        #   echo "Directorio actual: $(pwd)"
+        #    echo "Directorio de trabajo: ${{ github.workspace }}"
+        #   unzip chromedriver-linux64.zip
+        #         ls -R /home/runner/work/automationone/automationone/enviroment/chromedriver-linux64
+        #    sudo chmod +x chromedriver-linux64/chromedriver
+        #    sudo chmod 777 chromedriver-linux64/chromedriver
+        #   sudo ln -s /home/runner/work/automationone/automationone/enviroment/chromedriver-linux64/chromedriver /usr/local/bin/chromedriver
+        #sudo ln -s /opt/hostedtoolcache/Python/3.13.5/x64/chromedriver-linux64/chromedriver /usr/local/bin/chromedriver
       - name: Run tests
         working-directory: enviroment/web/Tests
-        run: python - m pytest
+        run: |
+          pytest -v
