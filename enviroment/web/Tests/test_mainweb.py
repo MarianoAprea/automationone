@@ -22,7 +22,7 @@ url, driver = configurardatos()
 def test_dashboard():
     driver.get(url=url)
     assert "Welcome!" == driver.find_element(by=By.XPATH, value='//*[@id="content"]/div[1]/div/h1').text
-    driver.close()
+    # driver.close()
 
 
 def test_login():
@@ -33,7 +33,7 @@ def test_login():
     driver.find_element(by=By.ID, value='submitLoginBtn').click()
     sleep(4)
     assert "SHOPPING CART" == driver.find_element(by=By.XPATH, value='//*[@id="prooood"]/section[1]/h2').text
-    driver.close()
+    #driver.close()
 
 def test_exito():
     assert 1 == 1
