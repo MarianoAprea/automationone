@@ -21,7 +21,7 @@ opt.add_argument('--disable-dev-shm-usage')
 
 opt.add_experimental_option('excludeSwitches', ['enable-logging'])
 
-chromedriver_path = "/home/runner/work/automationone/automationone/enviroment/chromedriver-linux64/chromedriver"
+chromedriver_path = '/home/runner/work/automationone/automationone/enviroment/chromedriver-linux64/chromedriver'
 
 
 # @pytest.mark.parametrize("driver", [
