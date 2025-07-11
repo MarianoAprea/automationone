@@ -3,7 +3,7 @@ from selenium import webdriver
 #from web.setup.principal import base_url
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.service import Service
-
+import tempfile
 # import pytest
 
 base_url ='https://qa-practice.netlify.app/'
