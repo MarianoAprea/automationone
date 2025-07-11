@@ -30,7 +30,7 @@ chromedriver_path = "usr/local/bin/chromedriver"
 #  (webdriver.Firefox()),
 # ])
 def test_dashboard():
-    driver = webdriver.Chrome(executable_path=chromedriver_path, options=opt)
+    driver = webdriver.Chrome(service=Service(executable_path=chromedriver_path), options=opt)
     # driver = webdriver.Chrome(options=opt, service=Service(executable_path="/usr/local/bin/chromedriver"))
     driver.get(url=base_url)
     assert "Welcome!" == driver.find_element(by=By.XPATH, value='//*[@id="content"]/div[1]/div/h1').text
@@ -38,7 +38,7 @@ def test_dashboard():
 
 
 def test_login():
-    driver = webdriver.Chrome(executable_path=chromedriver_path, options=opt)
+    driver = webdriver.Chrome(service=Service(executable_path=chromedriver_path), options=opt)
     driver.get(url=base_url)
     driver.find_element(by=By.XPATH, value='//*[@id="auth-shop"]/b').click()
     driver.find_element(by=By.XPATH, value='// *[ @ id = "email"]').send_keys('admin@admin.com')
