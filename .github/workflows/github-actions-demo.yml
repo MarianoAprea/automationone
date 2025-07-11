@@ -26,7 +26,7 @@ jobs:
 
       - name: Setup Chrome
         uses: browser-actions/setup-chrome@v1.7.3
-      with:
+        with:
         install-chromedriver: 'true'
         install-dependencies: 'true'
       #- name: Install chrome
