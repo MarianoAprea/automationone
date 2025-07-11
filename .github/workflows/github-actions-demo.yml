@@ -11,9 +11,9 @@ jobs:
         working-directory: ./enviroment
     steps:
       - name: Checkout   
-        uses: actions/checkout@v4.2.2
+      - uses: actions/checkout@v4.2.2
       - name: Set up Python
-        uses: actions/setup-python@v5.6.0
+      - uses: actions/setup-python@v5.6.0
         with:
           python-version: "3.13"
 
@@ -25,7 +25,7 @@ jobs:
           python -m pip install pytest  
 
       - name: Setup Chrome
-        uses: browser-actions/setup-chrome@v1.7.3
+      - uses: browser-actions/setup-chrome@v1.7.3
         with:
         install-chromedriver: 'true'
         install-dependencies: 'true'
