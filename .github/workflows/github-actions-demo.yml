@@ -37,6 +37,8 @@ jobs:
       - name: Install chromedriver
         run: |
           wget -N https://storage.googleapis.com/chrome-for-testing-public/138.0.7204.94/linux64/chromedriver-linux64.zip
+          echo "Directorio actual: $(pwd)"
+          echo "Directorio de trabajo: ${{ github.workspace }}"
           unzip chromedriver-linux64.zip 
           sudo chmod +x ~./chromedriver
           sudo chmod 777 ~./chromedriver
