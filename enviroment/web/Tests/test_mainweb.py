@@ -37,7 +37,7 @@ def test_login():
     #driver.close()
 
 
-def test_compra_dos_prodcutos_iguales():
+def test_compra_dos_productos_iguales():
     driver.get(url=url)
     driver.find_element(by=By.ID, value='products-list').click()
     driver.find_element(by=By.XPATH, value='//*[@id="prooood"]/section[2]/div/div[5]/div/button').click()
