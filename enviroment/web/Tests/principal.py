@@ -8,6 +8,7 @@ import os
 
 def configurardatos():
     urldeweb = 'https://qa-practice.netlify.app/'
+    # configurar options del browser
     opt = Options()
     opt.add_argument(f"--user-data-dir={tempfile.mkdtemp()}")
     opt.add_argument("--no-sandbox")
@@ -16,10 +17,9 @@ def configurardatos():
     opt.add_argument('--ignore-certificate-errors')
     opt.add_argument('log-level=3')
     opt.add_argument('--disable-dev-shm-usage')
-    # opt.add_argument('--remote-debugging-port=9222')
-    #  opt.add_argument('--aggressive-cache-discard')
     opt.add_experimental_option('excludeSwitches', ['enable-logging'])
 
+    # si la path existe es por que esta ejecutandose remoto "github actions" y usa el driver del remoto = service
     if os.path.exists('/usr/local/bin/chromedriver'):
         service = Service('/usr/local/bin/chromedriver')
         opt.add_argument('--headless')
@@ -27,4 +27,4 @@ def configurardatos():
     else:
         driver = webdriver.Chrome(options=opt)
 
-    return urldeweb, driver
+    return driver, urldeweb
